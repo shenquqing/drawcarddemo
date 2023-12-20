@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddfkyiibo4uh2"]
+
+[ext_resource type="Script" path="res://drawcards.gd" id="1_itsrm"]
+[ext_resource type="Script" path="res://tendraw.gd" id="2_cgu8c"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 896.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 40
+
+[node name="RarityLabel" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 512.0
+offset_right = 896.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 40
+
+[node name="button" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 576.0
+offset_right = 1088.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 41
+text = "抽！
+"
+script = ExtResource("1_itsrm")
+
+[node name="CardImageTextureRect" type="TextureRect" parent="."]
+offset_right = 448.0
+offset_bottom = 648.0
+expand_mode = 4
+
+[node name="tendraw" type="Button" parent="."]
+offset_left = 704.0
+offset_top = 576.0
+offset_right = 896.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 41
+text = "10连抽！"
+script = ExtResource("2_cgu8c")
+
+[node name="CardImageTextureRect1" type="TextureRect" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 256.0
+expand_mode = 4
+
+[node name="CardImageTextureRect2" type="TextureRect" parent="."]
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 256.0
+expand_mode = 4
+
+[node name="CardImageTextureRect3" type="TextureRect" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 256.0
+expand_mode = 4
+
+[node name="CardImageTextureRect4" type="TextureRect" parent="."]
+offset_left = 640.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 256.0
+expand_mode = 4
+
+[node name="CardImageTextureRect5" type="TextureRect" parent="."]
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 256.0
+expand_mode = 4
+
+[node name="CardImageTextureRect6" type="TextureRect" parent="."]
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 512.0
+expand_mode = 4
+
+[node name="CardImageTextureRect7" type="TextureRect" parent="."]
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 384.0
+offset_bottom = 512.0
+expand_mode = 4
+
+[node name="CardImageTextureRect8" type="TextureRect" parent="."]
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 576.0
+offset_bottom = 512.0
+expand_mode = 4
+
+[node name="CardImageTextureRect9" type="TextureRect" parent="."]
+offset_left = 640.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 512.0
+expand_mode = 4
+
+[node name="CardImageTextureRect10" type="TextureRect" parent="."]
+offset_left = 832.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 512.0
+expand_mode = 4
+
+[connection signal="pressed" from="button" to="button" method="drawCard"]
+[connection signal="pressed" from="button" to="button" method="clear"]
+[connection signal="button_down" from="tendraw" to="tendraw" method="_on_button_down"]
