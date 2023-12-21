@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddfkyiibo4uh2"]
+[gd_scene load_steps=5 format=3 uid="uid://ddfkyiibo4uh2"]
 
 [ext_resource type="Script" path="res://drawcards.gd" id="1_itsrm"]
 [ext_resource type="Script" path="res://tendraw.gd" id="2_cgu8c"]
+[ext_resource type="Script" path="res://backButton.gd" id="3_56jr7"]
+[ext_resource type="Texture2D" uid="uid://xw7q3q8l4tua" path="res://黑暗大法师_抽卡场景界面.jpg" id="4_27nwq"]
 
-[node name="Node2D" type="Node2D"]
+[node name="drawcardsence" type="Node2D"]
 
 [node name="NameLabel" type="Label" parent="."]
 offset_left = 704.0
@@ -20,10 +22,10 @@ offset_bottom = 576.0
 theme_override_font_sizes/font_size = 40
 
 [node name="button" type="Button" parent="."]
-offset_left = 896.0
+offset_left = 768.0
 offset_top = 576.0
-offset_right = 1088.0
-offset_bottom = 647.0
+offset_right = 960.0
+offset_bottom = 648.0
 theme_override_font_sizes/font_size = 41
 text = "抽！
 "
@@ -35,9 +37,9 @@ offset_bottom = 648.0
 expand_mode = 4
 
 [node name="tendraw" type="Button" parent="."]
-offset_left = 704.0
+offset_left = 576.0
 offset_top = 576.0
-offset_right = 896.0
+offset_right = 768.0
 offset_bottom = 648.0
 theme_override_font_sizes/font_size = 41
 text = "10连抽！"
@@ -113,6 +115,23 @@ offset_right = 960.0
 offset_bottom = 512.0
 expand_mode = 4
 
-[connection signal="pressed" from="button" to="button" method="drawCard"]
+[node name="backButton" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 576.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 41
+text = "返回"
+script = ExtResource("3_56jr7")
+
+[node name="backgroundimage" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("4_27nwq")
+
 [connection signal="pressed" from="button" to="button" method="clear"]
+[connection signal="pressed" from="button" to="button" method="drawCard"]
 [connection signal="button_down" from="tendraw" to="tendraw" method="_on_button_down"]
+[connection signal="pressed" from="backButton" to="backButton" method="_on_pressed"]

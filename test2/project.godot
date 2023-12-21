@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="test2"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://maindrawcard.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SenceChanger="*res://sence_changer.tscn"

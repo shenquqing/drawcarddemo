@@ -2,7 +2,7 @@ extends Button
 var cardButton: Button
 
 func _ready():
-	cardButton = get_node("/root/Node2D/button") # 替换为第一个按钮节点的路径
+	cardButton = get_node("/root/drawcardsence/button") # 替换为第一个按钮节点的路径
 	
 func drawTenCards():
 	for i in range(10):

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch5wxv4xt1yo8"]
+
+[ext_resource type="Texture2D" uid="uid://dqwkvr4osk0f" path="res://渊眼白龙_主场景背景.png" id="1_0od8g"]
+[ext_resource type="Script" path="res://gotodrawsence.gd" id="2_3qhsh"]
+
+[node name="maindrawcard" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 576.0
+offset_right = 704.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 41
+text = "开抽！"
+script = ExtResource("2_3qhsh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1152.0
+offset_bottom = 714.0
+mouse_filter = 2
+texture = ExtResource("1_0od8g")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
